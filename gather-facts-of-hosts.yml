@@ -1,0 +1,10 @@
+---
+    - name: Running Bash Scripts through Ansible
+      hosts: all
+      tasks:
+        - name: Print return information from the previous task
+          ansible.builtin.debug:
+            var: ansible_facts.user_id
+        - name: Print return information from the previous task
+          ansible.builtin.debug:
+            var: ansible_facts
