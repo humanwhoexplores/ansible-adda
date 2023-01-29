@@ -1,0 +1,9 @@
+- name: this playbook will query package version
+  hosts: web
+  tasks:
+    - name: this is the task to get version number
+      ansible.builtin.yum:
+        list: ansible
+      register: result
+    - debug:
+        var: result
