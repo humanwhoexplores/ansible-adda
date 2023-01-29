@@ -1,5 +1,5 @@
 # Inventory Files #
-.ini
+*.ini
 
 # OS generated files #
 ######################
