@@ -1,0 +1,16 @@
+---
+    - name: Running Bash Scripts through Ansible
+      hosts: all
+      gather_facts: no
+      tasks:
+        - name: Run a script with arguments
+          ansible.builtin.script: userScript.sh
+          register: userScript_output
+        
+        # - name: Print return information from the previous task
+        #   ansible.builtin.debug:
+        #     var: userScript_output
+
+        - name: Print return information from the previous task
+          ansible.builtin.debug:
+            var: userScript_output.stdout

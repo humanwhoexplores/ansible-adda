@@ -1,0 +1,1 @@
+yum info nginx
