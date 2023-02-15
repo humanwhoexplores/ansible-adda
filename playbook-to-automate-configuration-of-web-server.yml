@@ -1,0 +1,16 @@
+- name: this playbook will automate installation and running of web server
+  hosts: web
+  gather_facts: no
+  become: yes 
+  tasks:
+    - name: install the package
+      ansible.builtin.package:
+        name: httpd
+      register: result
+    - name: Run the Service
+      ansible.builtin.service: 
+          name: httpd
+          state: started
+          enabled: yes
+
+

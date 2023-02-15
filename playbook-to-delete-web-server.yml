@@ -1,0 +1,11 @@
+- name: this playbook will remove web server from the host
+  hosts: web
+  gather_facts: no
+  become: yes 
+  tasks:
+    - name: Delete the package
+      ansible.builtin.package:
+        name: httpd
+        state: absent
+
+
