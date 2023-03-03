@@ -1,0 +1,11 @@
+- name: using a variable inlcude file
+  gather_facts: no
+  remote_user: ubuntu
+  become: yes
+  hosts: ec2
+  vars_files: myvars.yml
+  tasks:
+  - name: install package {{ mypackage }}
+    apt:
+      name: "{{ mypackage }}"
+      state: latest
